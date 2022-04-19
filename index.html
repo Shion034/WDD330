@@ -6,9 +6,29 @@
 
     <title></title>
     <script>
+    const lists = ["Week 01","Week 02","Week 03","Week 04","Week 05","Week 06",
+                    "Week 07","Week 08","Week 09","Week 10","Week 11","Week 12",];
+    
+    function addElement(){
+        const newLi = document.createElement("li");
+
+        const newContent = document.createTextNode("week 01");
+
+        newLi.appendchild(newContent);
+
+        const addedElementLi = document.getElementById("weeklyName");
+        document.body.insertBefore(newLi, newContent);
+    }
+
+
+    //const links = [
+    //{
+    //label: "Week1 notes", url : "week1/index.html"
+    //}
+    //]
+
 
     </script>
-
     <style>
 
     </style>
@@ -22,12 +42,10 @@
     <main>
     <h1> Portfolio</h1>
 
-    <section class="list">
-        <ol>
-            <li><a>Week 01</a></li>
+        <ol id="weeklyName">
+            
         </ol>
 
-    </section>
     </main>
 </body>
 
