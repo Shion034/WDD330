@@ -1,33 +1,23 @@
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
 
-    <title></title>
+    <title>Portfolio</title>
     <script>
-    const lists = ["Week 01","Week 02","Week 03","Week 04","Week 05","Week 06",
-                    "Week 07","Week 08","Week 09","Week 10","Week 11","Week 12",];
-    
-    function addElement(){
-        const newLi = document.createElement("li");
+    const lists = ["Week1 notes", "Week2 notes", "Week3 notes", "Week4 notes", "Week5 notes",
+                    "Week6 notes", "Week7 notes", "Week8 notes", "Week9 notes", "Week10 notes",
+                    "Week11 notes", "Week12 notes", "Week13 notes"];
+    const links = [
+    {label: "Week1 notes", url : "week1/index.html"}
+    ];
 
-        const newContent = document.createTextNode("week 01");
+    function createElement(){
+        let createList = document.createElement("li");
+ 
 
-        newLi.appendchild(newContent);
-
-        const addedElementLi = document.getElementById("weeklyName");
-        document.body.insertBefore(newLi, newContent);
     }
-
-
-    //const links = [
-    //{
-    //label: "Week1 notes", url : "week1/index.html"
-    //}
-    //]
-
-
     </script>
     <style>
 
@@ -40,12 +30,15 @@
     <header></header>
 
     <main>
-    <h1> Portfolio</h1>
+    <h1> WDD 330 Portfolio</h1>
+    <h3>SHION KEATY</h3>
 
-        <ol id="weeklyName">
+        <ol>
+            <li><a href="../WDD330 portfolio/week1/week1.html">Week 01</a></li>
+            <li><a href="#">Week 02</a></li>
+            <li><a href="#">Week 03</a></li>
             
         </ol>
-
     </main>
 </body>
 
