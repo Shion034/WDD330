@@ -5,11 +5,14 @@ $coral: #E57F84;
 $blue: #2F5061;
 
 /*----------font----------*/
-    /*font-family: 'Ubuntu', sans-serif;*/
-h1,h2,h3{
+    /*font-family: 'Ubuntu', sans-serif;
+      font-family: 'Roboto Condensed', sans-serif;*/
+h1,h2,h3,h4{
     color: #253e4b;
     font-family: 'Ubuntu', sans-serif;
 }
+
+
 /*----------basic element----------*/
 header{
     background-color: $coral;
@@ -21,6 +24,13 @@ main{
     padding: 5%;
     border-radius: 20px;
     border: 2.5px solid $coral;
+
+    h4{
+        color: $green;
+    }
+    p{
+        padding-left: 5%;
+    }
 }
 footer{
     background-color: $blue;
@@ -45,4 +55,9 @@ a:hover{
     font-weight: bold;
     font-style: italic;
     font-size: 3em;
+}
+/*---------- id ----------*/
+#exercises {
+    background-color: lightyellow;
+    padding: 2%;
 }
