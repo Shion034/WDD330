@@ -55,3 +55,28 @@ Number.isInteger(3.142);// false
 0o47; //39 4 eights and 7 units
 //If a number starts with a zero, followed by the letter b then it is considered to be in binary (base 2) notation:
 0b1010; //10 1 eight, 0 fours, 1 two and 0 units
+//Exponential Notation
+1e6; //1000000 means 1 multiplied by 10 to the power 6 (a million)
+2E3; //2000 2 multiplied by 10^3 (two thousand)
+2.5e-3; //0.0025 means 2.5 multiplied by 10 to the power -3 (0.001) 
+
+const number = 5;
+number.toExponential();//"5e+0"
+const PI = 3.1415926
+PI.toFixed();//"3.142"
+(325678).toPrecision(2);//"3.3e+5"
+2.459.toPrecision(2);//"2.5"
+//Number() method convert the tering form of a number into an actual number;
+Number('23');//23
+//String() method convert the number to a string;
+String(3);//"3" or 3+" "; , use toString() method
+parseInt('1010', 2); //10 converts from binary, back to decimal
+//if you use parseInt() with a decimal, it will remove anything after the decimal point
+parseInt("2.9",10);//2
+//parseFloat() that converts strings into floating point decimal numbers:
+parseFloat('2.9', 10);//2.9
+
+/*----------Boolean----------*/
+Boolean('hello');// true
+Boolean(24);//true
+Boolean(0);//false
