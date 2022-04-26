@@ -11,7 +11,14 @@ h1,h2,h3,h4{
     color: #253e4b;
     font-family: 'Ubuntu', sans-serif;
 }
-
+h4{
+        color: $green;
+        font-size: 1.5rem;
+    }
+p{
+        padding-left: 5%;
+        font-family: 'Roboto Condensed', sans-serif;
+    }
 
 /*----------basic element----------*/
 header{
@@ -25,12 +32,7 @@ main{
     border-radius: 20px;
     border: 2.5px solid $coral;
 
-    h4{
-        color: $green;
-    }
-    p{
-        padding-left: 5%;
-    }
+    
 }
 footer{
     background-color: $blue;
@@ -60,4 +62,11 @@ a:hover{
 #exercises {
     background-color: lightyellow;
     padding: 2%;
+}
+/*----------class----------*/
+.headtitle {
+    a{
+        color: $blue;
+    }
+    
 }
