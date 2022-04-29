@@ -4,14 +4,14 @@ const Name = { value: "Alexa"};
 Name.length; //5 retrive the name bariable's length property
 Name.length = 7;//7 
 //Method
-Name.toUpperCase();//write a string in all capital letters
-Name.toLowerCase();//write name in all lower-case letters
-Name.charAt(1);//l This tells us that the character 'l' is at position 1.
-Name.indexOf('A');//0 
-Name.indexOf('z');//-1 if a character doesn'T apper in the string, -1 will be returned
-Name.lastIndexOf('a');//4 last occurence of a character or substring
-Name.includes('a');//true
-Name.includes('z');//false
+name.toUpperCase();//write a string in all capital letters
+name.toLowerCase();//write name in all lower-case letters
+name.charAt(1);//l This tells us that the character 'l' is at position 1.
+name.indexOf('A');//0 
+name.indexOf('z');//-1 if a character doesn'T apper in the string, -1 will be returned
+name.lastIndexOf('a');//4 last occurence of a character or substring
+name.includes('a');//true
+name.includes('z');//false
 name.startsWith('A');//true
 name.startsWith('a');//false
 name.endsWith('A');//false
