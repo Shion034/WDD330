@@ -48,8 +48,30 @@
 
         <h5>Strech Goals</h5>
         <h3>01</h3>
-        
 
+        <input id="add1" placeholder="enter a number" type="text" />+
+        <input id="add2" placeholder="enter a number" type="text" />
+        <button id="Addition" onclick="getaddin()">Addition</button>
+        <div id="getaddout"></div>
+
+        <input id="sub1" placeholder="enter a number" type="text" />-
+        <input id="sub2" placeholder="enter a number" type="text" />
+        <button id="Subtruction" onclick="getsubin()">Subtruction</button>
+        <div id="getsubout"></div>
+
+        <input id="mul1" placeholder="enter a number" type="text" />×
+        <input id="mul2" placeholder="enter a number" type="text" />
+        <button id="Multiplication" onclick="getmulin()">Multiplication</button>
+        <div id="getmulout"></div>
+
+        <br>
+        <input id="stretchNumber1" placeholder="enter a number" type="number" /><input id="stretchNumber2"
+            placeholder="enter a number" type="number" />
+        <!-- Notice below that all of our buttons are calling the same function...but passing in the name of another function as the argument. Notice also what is missing...when you pass a function as a callback you DO NOT include the ()! If you add the () the function will get executed immediately instead of later like we would like. -->
+        <button id="stretchAdd" onclick="performOperation(add2)">+</button>
+        <button id="stretchSub" onclick="performOperation(sub2)">-</button>
+        <button id="stretchMult" onclick="performOperation(mult2)">*</button>
+        <div id="stretchOutput"></div>
     </main>
     <footer>
         Shion Keaty | WDD330
