@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="number">0</div>
+    <button id="down">カウントダウン</button>
+    <button id="up">カウントアップ</button>
+
+
+    <script>
+/*
+        var getNum = document.getElementById("number");
+        var down = document.getElementById("down");
+        var up = document.getElementById("up");
+        var count = 0;
+*/
+
+        var getNum = document.getElementById("number");
+        var num =0;
+
+        var down = document.getElementById("down");
+        down.addEventListener('click', function(){
+            num -= 1;
+        number.innerHTML = num;
+           /* var sub = getNum -=1;
+            document.getElementById("number").innerHTML = sub;*/
+        });
+
+        var up = document.getElementById("up");
+            up.addEventListener('click', function () {
+
+            num += 1;
+            number.innerHTML = num;
+               /* var add = getNum += 1;
+                document.getElementById("number").innerHTML = add;*/
+            });
+        
+
+
+    </script>
+</body>
+
+</html>

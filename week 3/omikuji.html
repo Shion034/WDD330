@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>おみくじ</h2>
+    <button id="hiku" >おみくじを引く</button>
+    <div id="result">今日の運勢</div>
+    <div id="message"></div>
+    
+
+
+<script>
+    var omikuji = ["凶","末吉","小吉","中吉","吉","大吉"];
+    var hiku = document.getElementById("hiku");
+    var disp = document.getElementById("result");
+    var num = 0;
+
+    hiku.addEventListener ("click",function () {
+        var num = Math.floor(Math.random() * omikuji.length);
+        var unnsei = omikuji[num];
+        disp.innerHTML = unnsei;
+
+       if(unnsei== "大吉"){
+           document.getElementById("message").innerHTML = "おめでとう！！";
+       } else if(unnsei=="凶"){
+           document.getElementById("message").innerHTML ="気にするなよ…";
+       }else {
+           document.getElementById("message").innerHTML = "まぁまぁか";
+       }
+    });
+
+
+</script>
+</body>
+
+</html>
