@@ -1,10 +1,9 @@
 alert("Welcome to quiz Ninja!");
 
-
 const quiz = [
     ["What is Superman's real name?", "Clark Kent"],
     ["What is Wonder Woman's real name?", "Diana Prince"],
-    ["What is Batman's real name?", "Bruce Wayne"]
+    ["What is Batman's real name?", "Bruce Wayne"],
 ];
 
 function start(quiz) {
