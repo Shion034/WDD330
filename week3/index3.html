@@ -30,13 +30,389 @@
         <h4>●Notes and Exercises●</h4>
             
                     <h5>Notes</h5>
-                    <p>--  --</p>
+                    <p>
+                        <strong>Ch5:Objects</strong><br>
+                        
+                        Object literals:
+                        Objects are often used to keep any related information and functionality together in the same place.
+                        An object literal is an object that is created directly in the language by wrapping all its properties and methods in
+                        curly braces {}.
+                        
+                        EX) const superman = {
+                        name: 'Superman',
+                        'real name': 'Clark Kent',
+                        height: 75,
+                        weight: 235,
+                        hero: true,
+                        villain: false,
+                        allies: ['Batman','Supergirl','Superboy'],
+                        fly() {
+                        return 'Up, up and away!';
+                        }
+                        };
+                        
+                        Creating Objects:
+                        const spiderman = {};
+                        const spiderman = new Object();
+                        Accessing Properties;
+                        
+                        Accessing Properties:
+                        superman.name
+                        << 'Superman'
+                         superman['name']
+                          << 'Superman'
+                           superman["real" + " " + "name" ] // the property is built using string concatenation 
+                        << "Clark Kent"
+                        superman.city
+                        << undefined
+                        Computed Properties: 
+                        const hulk={ name: 'Hulk' , ['catch'+ 'Phrase' ]: 'Hulk Smash!' };
+                        const name=Symbol('name');
+                        const supergirl={ [name]: 'Supergirl' }; supergirl[name];
+                        << 'Supergirl'
+                            
+                        Calling Methods:
+                        To call an object’s method we can also use dot or bracket notation. 
+                        superman.fly()        << 'Up, up and away!' 
+                        superman['fly']() << 'Up, up and away!'
+                         Checking if Properties or Methods Exist:
+                         'city' insuperman;
+                        << false superman.city !==undefined;
+                        << false superman.hasOwnProperty('city');
+                        << false
+                        superman.hasOwnProperty('name');
+                        << true 
+                        
+                        Finding all the Properties of an Object:
+                         for(const key in superman) {
+                        console.log(key + ": " + superman[key]); }
+                         << "name: Superman"
+                         << "real name: Clark Kent"
+                         << "height: 75"
+                        << "weight: 235" 
+                        << "hero: true" 
+                        << "villain: false" 
+                        << "allies: Batman,Supergirl,Superboy" 
+                        << "fly: function (){
+                            console.log(\" Up, up and away!\"); }" 
+                            
+                        for(const key in superman) { 
+                            if(superman.hasOwnProperty(key)){
+                            console.log(key + ": " + superman[key]); } } 
+                        for(const key of Object.keys(superman)) { console.log(key); } << name
+                            real name height weight hero villain allies fly for(const value of Object.values(superman)) { console.log(value); }
+                            << Superman Clark Kent 75 235 true false [ 'Batman' ,'Supergirl','Superboy' ] [Function: fly] for(const [key,value]
+                            of Object.entries(superman)) { console.log(`${key}: ${value}`); } << name: Superman real name: Clark Kent height: 75
+                            weight: 235 hero: true villain: false allies: [ 'Batman' ,'Supergirl','Superboy' ] fly: [Function: fly] Adding
+                            Properties: superman.city='Metropolis' ; << 'Metropolis' Changing Properties: superman['real name']='Kal-El' ;
+                            << 'Kal-El' Removing Properties: delete superman.fly << true Nested Objects: const jla={ superman: {
+                            realName: 'Clark Kent' }, batman: { realName: 'Bruce Wayne' }, wonderWoman: { realName: 'Diana Prince" },
+                            flash: { realName: ' Barry Allen' }, aquaman: { realName: 'Arthur Curry' }, } To access=jla.wonderWoman.realName
+                            << "Diana Prince" jla['flash']['realName'] << "Barry Allen" jla.aquaman['realName'] << "Arthur Curry" Objects as
+                            Parameters to Functions: function greet({greeting,name,age}) { return `${greeting}! My name is ${name} and I am
+                            ${age} years old.`; } greet({ greeting: `What's up dude`, age: 10, name: `Bart` }); << 'What\' s up dude! My name is
+                            Bart and I am 10 years old.' ****This **** const dice={ sides: 6, roll() { return Math.floor(this.sides *
+                            Math.random()) + 1; } } dice.roll(); << 5 dice.roll(); << 3 dice.sides=20; << 20 dice.roll(); << 12 dice.roll(); <<
+                            18 Namespacing: Built-in Objects: *** Json *** *** Math Object *** Math.PI // The ratio of the circumference and
+                            diameter of a circle << 3.141592653589793 Math.SQRT2 // The square root of 2 << 1.4142135623730951 Math.SQRT1_2 //
+                            The reciprocal of the square root of 2 << 0.7071067811865476 Math.E // Euler's constant << 2.718281828459045
+                            Math.LN2 // The natural logarithm of 2 << 0.6931471805599453 Math.LN10 // The natural logarithm of 10 <<
+                            2.302585092994046 Math.LOG2E // Log base 2 of Euler's constant << 1.4426950408889634 Math.LOG10E // Log base 10 of
+                            Euler's constant << 0.4342944819032518 Absolute Values The Math.abs() method returns the absolute value of a number.
+                            So if the number is positive, it will remain the same, and if it’s negative, it will become positive: Math.abs(3);
+                            << 3 Math.abs(-4.6); << 4.6 Rounding Methods The Math.ceil() method will round a number up to the next integer
+                            Math.ceil(4.2); << 5 Math.ceil(8); << 8 Math.ceil(-4.2); << -4 The Math.floor() method will round a number down to
+                            the next integer Math.floor(4.2); << 4 Math.floor(8); << 8 Math.floor(-4.2); << -5 The Math.round() method will
+                            round a number to the nearest integer: Math.round(4.5); << 5 Math.round(4.499); << 4 Math.round(-4.2); << -4 Powers
+                            and Roots: The Math.exp() method will raise a number to the power of Euler’s constant: Math.exp(1); // This is
+                            Euler's constant << 2.718281828459045 Math.exp(0); // Any number to the power of 0 is 1 << 1 Math.exp(-3); <<
+                            0.049787068367863944 The Math.pow() method will raise any number (the first argument) to the power of another number
+                            (the second argument): Math.pow(3, 2); // 3 squared << 9 Math.pow(4.5, 0); // Any number to the power of 0 is 1 << 1
+                            Math.pow(27, 1/3); // A nice way to do cube roots << 3 The Math.sqrt() method returns the positive square root of a
+                            number: The Math.cbrt() method was introduced in ES6, which returns the cube root of numbers: The Math.hypot()
+                            method was also introduced in ES6. It returns the square root of the sum of the squares of all its arguments.
+                            Math.hypot(3,4); // returns the square root of 3 squared + 4 squared << 5 Math.hypot(2,3,6); // more than 2
+                            arguments can be used << 7 The Math.log() method returns the natural logarithm of a number: Maximum & Minimum
+                            Methods: Math.max(1,2,3); << 3 Math.max(Math.PI,Math.SQRT2, Math.E); << 3.141592653589793 Math.min(1,2,3); << 1
+                            Math.min(Math.PI,Math.SQRT2, Math.E); << 1.4142135623730951 The Math.sin() returns the sine of an angle: The
+                            Math.cos() returns the cosine of an angle: The Math.tan() returns the tangent of an angle: The Math.asin() returns
+                            the arcsine of a number. The result is an angle: The Math.acos() returns the arccosine of a number. The result is an
+                            angle: The Math.atan() returns the arctangent of a number. The result is an angle: Methods for the hyperbolic
+                            functions, sinh(), cosh() and tanh() were also added in ES6, as well as their inverses: The Math.random() method is
+                            used to create random numbers The Date Object: const today=new Date(); today.toString();
+                            << 'Tue Feb 14 2017 16:35:18 GMT+0000 (GMT)' The getDay() and getUTCDay() methods are used to find the day of the
+                            week that the date object falls on. It returns a number, starting at 0 for Sunday, up to 6 for Saturday: The
+                            getDate() and getUTCDate() methods return the day of the month for the date object (note that these values start
+                            counting from 1, not 0, so they return the actual day of the month): The getMonth() and getUTCMonth() methods can be
+                            used to find the month of the date object. It returns an integer, but remember to count from 0; so January is 0,
+                            February is 1, and so on up to December being 11: The getFullYear() and getUTCFullYear() methods return the year of
+                            the date object. There are also getHours(), getUTCHours(), getMinutes(), getUTCMinutes(), getSeconds(),
+                            getUTCSeconds, getMilliseconds(), and getUTCMilliseconds() methods<br>
+<br>
+                            <strong>Ch6:The Document Object Model</strong><br>
+                            Introduction to the DOM
+                            <ul>
+                                <li>Getting elements ― getElementById, getElementsByClassName, getElementsByTagName, querySelector and
+                                    querySelectorAll</li>
+                            
+                                <li>Navigating the DOM</li>
+                            
+                                <li>Getting and setting an element’s attributes</li>
+                            
+                                <li>Updating the DOM by creating dynamic markup</li>
+                            
+                                <li>Changing the CSS of an element</li>
+                            
+                                <li>Our project ― we'll dynamically insert each question into the HTML</li>
+                            
+                                <strong>The Document Object Model</strong><br>
+                            
+                                >>What is the DOM?<br>
+                                The Document Object Model, or DOM for short, represents an HTML document as a network of connected nodes that form a
+                                tree-like structure.
+                                <br>
+                                <strong>Legacy DOM Shortcut Methods:</strong><br>
+                                Document.body returns the body element of a web page, as we saw in the previous example.<br>
+                            
+                                Document.images returns a node list of all the images contained in the document.<br>
+                            
+                                Document.links returns a node list of all the  elements and <area> elements that have an href attribute.<br>
+                            
+                                    Document.anchors returns a node list of all the  elements that have a name attribute.<br>
+                            
+                                        Document.forms returns a node list of all the forms in the document. This will be used when we cover forms
+                                        in Chapter 8.<br>
+                            
+                                        <strong>Getting An Element By Its ID</strong><br>
+                                        The getElementById() method does exactly what it says on the tin. It returns a reference to the element with
+                                        a unique id attribute that is given as an argument.<br>
+                                        <strong>Get Elements By Their Tag Name:</strong><br>
+                                        getElementsByTagName() will return a live node list of all the elements with the tag name that is provided
+                                        as an argument.<br>
+                            
+                                        <strong>Get Elements By Their Class Name:</strong><br>
+                                        getElementsByClassName() will return a live node list of all elements that have the class name that is
+                                        supplied as an argument.<br>
+                            
+                                        <strong>Query Selectors:</strong><br>
+                                        The document.querySelector() method allows you to use CSS notation to find the first element in the document
+                                        that matches that matches a CSS selector provided as an argument. If no elements match, it will return
+                                        null.<br>
+                                        The document.querySelectorAll() method also uses CSS notation but returns a node list of all the elements in
+                                        the document that match the CSS query selector.<br>
+                                        //For example, the following could be used instead of document.getElementById():
+                                        document.querySelector('#bats');
+                                        << li class="vigilante hero" id="bats">Batman li
+                                            //And this could be used instead of document.getElementsByClassName:
+                                            document.querySelectorAll('.hero');
+                                            << NodeList [li class="hero", li id="bats",
+                                                li class="hero">]
+                            
+                                                    const wonderWoman = document.querySelector('li:last-child');<br>
+                                                    const ul = document.querySelector('ul#roster');<br>
+                                                    const batman = ul.querySelector('li#bats')
+                                                    <br>
+                                                    <strong>Navigating the DOM Tree:</strong><br>
+                                                    Note that the childNodes property returns all the nodes that are children of an element.<br>
+                                                    const heroes = document.getElementById('roster');<br>
+                                                    heroes.childNodes<br>
+                                                    The children property only returns any element nodes that are children of that node, so will
+                                                    ignore any text nodes.<br>
+                                                    heroes.children
+                                                    <strong>The firstChild property returns the first child of a node:</strong><br>
+                                                    And the lastChild property returns the last child of a node:
+                                                    The parentNode property returns the parent node of an element.<br>
+                                                    The nextSibling property returns the next adjacent node of the same parent.<br>
+                                                    The previousSibling property returns the previous adjacent node.<br>
+                            
+                                                    <strong>Finding the Value of a Node:</strong><br>
+                                                li class='hero'>Wonder Woman li<br>
+                                                It clearly contains the text 'Wonder Woman', but this is held in a text node, which is the first
+                                                child of the li element node:<br>
+                                                    →const textNode = wonderWoman.firstChild;<br>
+                                                    →textNode.nodeValue;<< "Wonder Woman" <br>
+                                                        We can also find this value using the textContent property. <br>
+                            
+                                                        Getting and Setting Attributes：
+                                                        Getting An Element’s Attributes：
+                                                        The getAttribute() method returns the value of the attribute provided as an argument:<br>
+                                                        →wonderWoman.getAttribute('class');<br>
+                            
+                                                        Setting An Element’s Attributes：
+                                                        The setAttribute can change the value of an element’s attributes.<br>
+                                                        Change Class="hero" to "villain":
+                                                        wonderWoman.setAttribute('class', 'villain');<br>
+                            
+                                                        If an element does not have an attribute, the setAttribute method can be used to add it to
+                                                        the element.<br>
+                                                        wonderWoman.setAttribute('id','amazon');<br>
+                                                        wonderWoman.getAttribute('id');<br>
+                                                        << 'amazon' <strong>Classes Of An Element:</strong><br>
+                                                            wonderWoman.className;
+                                                            << "villain" <br>
+                                                                wonderWoman.className = 'hero'
+                                                                << "hero" → class back to hero form villain
+                                                                 <strong>The classList Property:</strong><br>
+                                                                    The classList property is a list of all the classes an element has. <br>
+                                                                    To add class by JavaScirpt, the target element should already have it's class.
+                                                                    <br>
+                                                                    wonderWoman.classList.add('warrior');//add<br>
+                                                                    wonderWoman.className; //check<br>
+                                                                    The remove method will remove a specific class from an element. <br>
+                                                                    wonderWoman.classList.remove('warrior');
+                                                                    The toggle method is a particularly useful method that will add a class if an
+                                                                    element doesn’t have it already, and remove the class if it does have it.
+                                                                    →あったら、クラスを消し、なかったらつけられる。<br>
+                                                                    <strong>The contains method will check to see if an element has a particular
+                                                                        class:</strong>
+                                                                    <strong>Creating Dynamic Markup：</strong><br>
+                                                                    <strong>Creating An Element:</strong><br>
+                                                                    The document object has a createElement() method that takes a tag name as a
+                                                                    parameter and returns that element.<br>
+                                                                    const flash = document.createElement('li');<br>
+                                                                    <strong>Creating a Text Node:</strong><br>
+                                                                    A text node can be created using the document.createTextNode() method. It takes
+                                                                    a parameter, which is a string containing the text that goes in the node.<br>
+                                                                    const flashText = document.createTextNode('Flash');<br>
+                            
+                                                                    <strong>Appending Nodes:</strong><br>
+                                                                    
+                                                                    1.Create the element node<br>
+                            
+                                                                    2.Create the text node<br>
+                            
+                                                                    3.Append the text node to the element node<br>
+                                                                    
+                            
+                                                                        const flash = document.createElement('li');<br>
+                                                                        flash.textContent = 'Flash';<br>
+                            
+                                                                        <strong>A Function To Create Elements:</strong><br>
+                                                                        function createElement (tag,text) {<br>
+                                                                        const el = document.createElement(tag);<br>
+                                                                        el.textContent = text;<br>
+                                                                        return el<br>
+                                                                        }<br>
+                                                                        const aquaman = createElement('li','Aquaman');<br>
+                            
+                                                                        <strong>Adding Elements to the Page:</strong><br>
+                                                                        the appendChild() method can be called on a node to add a new child
+                                                                        node.<br>
+                                                                        heroes.appendChild(flash);
+                            
+                                                                        The insertBefore() method will place a new element before another element in
+                                                                        the markup.<br>
+                                                                        It’s important to note that this method is called on the parent node. It
+                                                                        takes two parameters: the first is the new node to be added, and the second
+                                                                        is the node that you want it to go before.<br>
+                                                                        heroes.insertBefore(aquaman,wonderWoman);<br>
+                                                                        heroes.appendChild(wonderWoman);←wonderWomanの位置を最後に。なぜなら、すでに存在するため。<br>
+                            
+                                                                        Remove Elements From a Page：
+                                                                        An element can be removed from a page using the removeChild() method.<br>
+                                                                        heroes.removeChild(aquaman);
+                            
+                                                                        <strong>Replacing Elements on a Page:</strong><br>
+                                                                        The replaceChild() method can be used to replace one node with another.:
+                            
+                                                                        const h1 = document.getElementById('title');<br>
+                                                                        const oldText = h1.firstChild;<br>
+                                                                        const newText = document.createTextNode('Justice League of America');<br>
+                                                                        h1.replaceChild(newText,oldText);<br>
+                            
+                                                                        *****innerHTML*****<br>
+                                                                        It returns all the child elements of an element as a string of HTML.<br>
+                                                                        The innerHTML property is also writable and can be used to place a chunk of
+                                                                        HTML inside an element.<br>
+                            
+                                                                        <strong>Live Collections:</strong><br>
+                            
+                                                                        <strong>Updating CSS:</strong><br>
+                                                                        const heroes = document.getElementById('roster');<br>
+                                                                        const superman = heroes.children[0];<br>
+                            
+                                                                        superman.style.border = "red 2px solid";
+                                                                        << "red 2px solid" <br>
+                            
+                                                                            <strong>Camel Case Properties:</strong><br>
+                                                                            superman.style.backgroundColor = 'blue';<br>
+                                                                            superman.style['background color'] = 'blue';<br>
+                            
+                                                                            superman.style.display = 'none';//hide superman<br>
+                                 <strong>Ch7:Events</strong><br><ul>
+                            
+                                <li>Introduction to events</li>
+                            
+                                <li>Adding event listeners</li>
+                            
+                                <li>The event object</li>
+                            
+                                <li>Mouse, keyboard and touch events</li>
+                            
+                                <li>Removing event listeners</li>
+                            
+                                <li>Stopping default behavior</li>
+                            
+                                <li>Event propagation</li>
+                            
+                                <li>Project – we'll add a 'start' button that can be clicked on to start the game</li>
+                            
+                                <strong>Event Listeners:</strong><br>
+                                Event listeners in JavaScript work in much the same way. They are like setting a notification to alert you when
+                                something happens. Instead of the program having to constantly check to see if an event has occurred, the event
+                                listener will let it know when the event happens, and the program can then respond appropriately.
+                                This allows the program to continue with other tasks while it waits for the event to happen.<br>
+                                document.body.addEventListener("click", doSomething);
+                            
+                                <strong>Using Event Listeners:</strong><br><br>
+                                The recommended way of dealing with events, and the current standard, is to use event listeners.<br>
+                            
+                                The addEventListener() method is called on a node object, the node to which the event listener is being applied.<br>
+                                document.body.addEventListener('click',doSomething);<br>
+                                Its first parameter is the type of event, and the second is a callback function that is invoked when the event
+                                occurs.<br>
+                            
+                                addEventListener('click', () => alert('You Clicked!'));<br>
+                                function doSomething() {<br>
+                                alert('You Clicked!');<br>
+                                }
+                                addEventListener('click',doSomething);<br>
+                            
+                                <strong>The Event Object:</strong><br>
+                                <strong>Types of Event:</strong><br>
+                                <strong>The Event Target:</strong><br>
+                                The target property returns a reference to the node that fired the event.<br>
+                            
+                                <strong>Coordinates of an Event:</strong><br>
+                                The screenX and screenY properties show the number of pixels from the left and top of the screen respectively where
+                                the event took place.
+                                The clientX and clientY properties show the number of pixels from the left and top of the client that is being used.
+                                The pageX and pageY properties show the number of pixels from the left and top, respectively, where the event took
+                                place in the document.
+                            
+                                <strong>Types of Events:</strong><br>
+                            
+                                <strong>Mouse Events:</strong><br>
+                                There are also the mousedown and mouseup events. These both occur before a click event is fired.
+                                There is also the dblclick event, which occurs when the user doubleclicks on the element to which the event listener
+                                is attached.
+                                The mouseover event occurs when the mouse pointer is placed over the element to which the event listener is
+                                attached, while the mouseout event occurs when the mouse pointer moves away from an element.
+                            
+                                <strong>Keyboard Events:</strong><br>
+                            
+
+                    </p>
                     <h5>Exercises</h5>
                     <div id="exercises">
                         <h5>Count app:<span><a href="../week3/conunt.html">CountApp</a></span></h5>
                         <h5>おみくじ app:<span><a href="../week3/omikuji.html">FortuneApp</a></span></h5>
                         <H5>Programing Basics:<span><a href="../week3/quiz nija W03.html">The Project: Quiz Ninja</a></span></H5>
                         <H5>Programing Basics:<span><a href="../week3/Ninja index.html">The Project: Quiz Ninja 2</a></span></H5>
+                    </div>
+                    <h5>Team Activity</h5>
+                    <div id="exercises">
+                        <h5>Team Activity Week03:<span><a href="../Team activity/week 03/index-START.html"> Week 03</a></span></h5>
                     </div>
                 
 
