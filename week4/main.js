@@ -1,3 +1,5 @@
+//*-------Forms-----*//
+
 /*---------------Accessing Form Elements--------------*/
 //  const form = document.forms[0];
 //  const form = document.getElementsByTagname('form')[0];
@@ -72,4 +74,13 @@ input.addEventListener('blur', function () {
 /*----------------I Need a Hero!-----------------*/
 /*----------------Form Validation-----------------*/
 /*---------------Disabling the Submit Button--------------*/
+
+//*-------Object-Oriented Programming in JavaScript--------*//
+/*----------The Constructor Property----------------------*/
+//All objects have a constructor property that returns the constructor function that created it:
+/*----------Static Methods-----------------*/
+//The static keyword can be used in class declarations to create a static method.
+/*------------Prototypal Inheritance------------*/
+/*-----------What Should the Prototype Be Used For?-------------*/
+//The prototype can be used to add any new properties and methods after the class has been declared. 
 

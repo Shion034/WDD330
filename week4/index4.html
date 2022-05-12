@@ -50,14 +50,47 @@
                     
                     ・A password is at least a minimum number of characters<br>
 
+                    <h6>Ch12:Object-Oriented Programming in JavaScript</h6>
+                    Object-oriented programming (OOP for short) is a style of programming that involves separating the code into objects
+                    that have properties and methods.This approach has the benefit of keeping related pieces of code encapsulated in objects that maintain state throughout
+                    the life of the program.<br>
+                    <strong>*Encapsulation</strong><br>
+                    the inner workings are kept hidden inside the object and only the essential functionalities are exposed to the end user,
+                    such as the 'on' button. In OOP, this involves keeping all the programming logic inside an object and making methods
+                    available to implement the functionality, without the outside world needing to know how it’s done.<br>
+                    <strong>*Polymorphism</strong><br>
+                    the concept of polymorphism: the same process can be used for different objects. In OOP, this means various objects can
+                    share the same method, but also have the ability to override shared methods with a more specific implementation.<br>
+                    <strong>*Inheritance</strong><br>
+                    the concept of inheritance: taking the features of one object then adding some new features. In OOP, this means we can
+                    take an object that already exists and inherit all its properties and methods.<br>
+                    <strong>*Classes</strong><br>
+                    Many object-oriented languages, such as Java and Ruby, are known as class-based languages.JavaScript didn't have classes before ES6, and used the concept of using actual objects as the blueprint for creating
+                    more objects. This is known as a prototype-based language.The juicers based on the prototype would be able to do everything the prototype could do, with some being able to do
+                    even more.<br>
+                    <strong>*Summaries for Classes</strong><br>
+                    ・Create a class declaration that deals with any initialization, shared properties and methods.<br>
+                    
+                    ・Any extra methods and properties that need to be augmented to the class declaration after it’s been defined can be added
+                    to the prototype. These will be added to all instances, even those that have already been created.<br>
+                    
+                    ・Add any properties or methods that are individual to a particular instance can be augmented using assignment to that
+                    object (a mixin could be used to add multiple properties at once, as we’ll see later).<br>
+                    
+                    ・Be careful when overwriting the prototype completely ― the constructor class needs to be reset.<br>
+                    <strong>*Polymorhism</strong><br>
+                    The concept of polymorphism means that different objects can have the same method, but implement it in different ways.
+
+
+
 
 
                     </p>
                     <h5>Exercises</h5>
                     <h5>A Searching Example :<span><a href="../week4/search.html">A Searching Example</a></span></h5>
                     <h5>A hero form :<span><a href="../week4/hero.html">hero.html</a></span></h5>
-
-                    
+                    <H5>Programing Basics:<span><a href="../week3/Ninja index.html">The Project: Quiz Ninja 2</a></span></H5>
+                    <h5>Quiz Ninja Project :<span><a href="../week3/Ninja index.html">忍者！Project</a></span></h5>
                     
 
                     <div id="exercises">
@@ -79,7 +112,7 @@
     </footer>
 
 
-    <script src="../js/main.js"></script>
+    <script src="../week4/main.js"></script>
 </body>
 
 </html>
