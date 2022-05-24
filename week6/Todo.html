@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Todos</h2>
+    
+        <div id="list" class="listcontainer">
+
+        </div>
+    
+    
+    <input id="todo" type="text">
+    <button id="addtodo"  >+</button>
+
+
+    <script>
+       
+        const getContainer = document.querySelector(".listcontainer");
+        const addtodo = document.getElementById("addtodo");
+
+        //id付きのdivをHTML内に追加
+        function addDiv(){
+            const divCreator = document.createElement("div");
+            divCreator.setAttribute("id", "outputContent");
+            getContainer.appendChild(divCreator);  
+            console.log("hello");
+        }
+        
+
+        //input内の内容を取得して、div内に追加
+        /*const showtodo =()=>{
+             const getText = document.getElementById("todo");
+             const todoValue = getText.value;
+
+             const output = todoValue;
+             document.getElementById("outputContent").textContent = output;
+             console.log(output);     
+        }*/
+
+        
+    </script>
+</body>
+</html>
