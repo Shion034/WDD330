@@ -1,0 +1,68 @@
+html {
+    
+    font-size: 16px;
+}
+
+body,
+html {
+    width: 960px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    margin-left: 1rem;
+}
+
+.task_value {
+    height: 1.5rem;
+}
+
+.task_submit {
+    height: 2rem;
+}
+
+#table {
+    
+    width: 30%;
+    height: 400px;
+    margin-top: 2rem;
+}
+.x_button, .done_button{
+    margin: 2px;
+}
+.sort{
+    background-color: transparent;
+    border: none;
+}
+.linethrough{
+    text-decoration: line-through;
+}
+
+h2 {
+    font-size: 1.2rem;
+    padding: 1rem;
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+li {
+    margin:  0;
+    padding: 2px;
+    text-decoration: none;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr;
+}
+form {
+    margin: 5px;
+}
+input{
+    border: 1px solid black;
+    width: 15rem;
+}
+button {
+    font-size: 1rem;
+    border: 1px solid black;
+    padding: 0px 8px 0px 8px;
+
+}
