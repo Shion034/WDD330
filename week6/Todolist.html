@@ -11,12 +11,31 @@
     <h1>Todos</h1>
     
     <div id="table">
-        <ul class="task_list"></ul>
+        <ul class="task_list">
+            <!----<li class="demo Active">
+                Reading
+            <button class="done_button">□</button>
+            <button class="ｘ_button">ｘ</button>
+            </li>
+            <li class="demo Active">
+                Cording
+                <button class="done_button">□</button>
+                <button class="ｘ_button">ｘ</button>
+            </li>
+            <li class="demo Active">
+                Review last week's assignments
+                <button class="done_button">□</button>
+                <button class="ｘ_button">ｘ</button>
+            </li>--->
+            
+        </ul>
     </div>
-    <div id="count_task"></div>Tasks Left
-    <button class="sort all" type="button">All</button>
-    <button class="sort active" type="button">Active</button>
-    <button class="sort complete" type="button">Complete</button>
+    <section class="countings">
+    <div id="count_task"></div>
+    <button class="sort show_all" type="button">All</button>
+    <button class="sort show_active" type="button">Active</button>
+    <button class="sort show_complete" type="button">Complete</button>
+    </section>
     <form>
         <input class="task_value" type="text" />
         <button class="task_submit" type="button">+</button>
@@ -25,8 +44,8 @@
 
     <script >
         const taskValue = document.getElementsByClassName('task_value')[0];
-            const taskSubmit = document.getElementsByClassName('task_submit')[0];
-            const taskList = document.getElementsByClassName('task_list')[0];
+        const taskSubmit = document.getElementsByClassName('task_submit')[0];
+        const taskList = document.getElementsByClassName('task_list')[0];
 
             //追加ボタンを作成
             const addTasks = (task) => {
@@ -34,7 +53,13 @@
                 // 入力したタスクを追加・表示
                 const listItem = document.createElement('li');
                 const showItem = taskList.appendChild(listItem);
+                showItem.classList =("Active");
+                    
+                 const countActive = document.querySelectorAll(".Active").length;
+                 document.getElementById("count_task").innerHTML = countActive + "Tasks Left";
                 showItem.innerHTML = task;
+
+
 
                 //タスク完了ボタンを付与
                  const doneButton = document.createElement('button');
@@ -44,6 +69,8 @@
                 //完了ボタンをクリックし、タスクに線を引く
                 doneButton.addEventListener('click', line=>{
                     showItem.classList =('linethrough');
+                    const countComplete = document.querySelectorAll(".linethrough").length;
+                    console.log(countComplete);
                 });
 
                 //タスクに削除ボタンを付与
@@ -71,7 +98,46 @@
                 addTasks(task);
                 taskValue.value = '';
             });
+        
+        const btnAll = document.getElementsByClassName("show_all")[0];
+        const btnActive = document.getElementsByClassName("show_active")[0];
+        const btnComplete = document.getElementsByClassName("show_complete")[0];
+   
+         /*btnActive.addEventListener('click', function () {
+            const getAc = document.querySelectorAll('.complete').length;
+            console.log(getAc);
+        });*/
+        
+            
 
+
+
+
+        btnActive.addEventListener('click', (removeComplete) => {
+                var elements = document.querySelectorAll(".linethrough");
+                const CompleteTodos = document.querySelectorAll(".Active");
+                for (var i = 0; i < CompleteTodos.length; i++) {
+                    var e = elements[i];
+                    if (e) {
+                        e.style.display = "none";
+                    }
+                }
+            });
+        
+        btnComplete.addEventListener('click', (removeActive) => {
+            var elements = document.querySelectorAll(".Active");
+            const CompleteTodos = document.querySelectorAll(".linethrough");
+            for(var i=0; i< CompleteTodos.length; i++){
+                var e = elements[i];
+                if (e){
+                     //e.parentNode.removeChild(e);
+                     e.style.display = "none";
+                }
+            }
+        });
+           btnAll.addEventListener('click', function () {
+                document.querySelectorAll('li').style.display ="";
+            });
 
     </script>
 </body>

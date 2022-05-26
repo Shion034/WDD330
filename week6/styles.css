@@ -35,6 +35,11 @@ html {
 .linethrough{
     text-decoration: line-through;
 }
+.countings{
+    width: 30%;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+}
 
 h2 {
     font-size: 1.2rem;
