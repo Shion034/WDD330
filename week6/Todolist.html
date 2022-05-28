@@ -135,8 +135,15 @@
                 }
             }
         });
-           btnAll.addEventListener('click', function () {
-                document.querySelectorAll('li').style.display ="";
+           btnAll.addEventListener('click', (apperAll) => {
+                var elements = document.querySelectorAll("li");
+                for (var i = 0; i < elements.length; i++) {
+                    var e = elements[i];
+                    if (e) {
+                        //e.parentNode.removeChild(e);
+                        e.style.display = "grid";
+                    }
+                }
             });
 
     </script>
