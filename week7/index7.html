@@ -97,29 +97,63 @@
                         result, or both.Closures are used extensively in higher-order functions as they allow us to create a generic function that can be used
                         to then return more specific functions based on its arguments. This is done by creating a closure around a function's
                         arguments that keeps them 'alive' in a return function.
-                        
-
-
-
-
-                        
-
-
-
-
-
-
-
-
-
-
-
-
-                        
+                           
                     </p>
+                <h5>Ajax</h5>
+                <p>
+                    Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web
+                    pages without reloading. This enables data to be sent and received in the background, as well as portions of a page to
+                    be updated in response to user events, while the rest of the program continues to run.<br>
+                    <strong>Clients and Servers</strong><br>
+                    The web of computers known as the internet can be separated into two parts: clients and servers. A client, such as a web
+                    browser, will request a resource (usually a web page) from a server, which processes the request and sends back a
+                    response to the client.<br>
+                    JavaScript was originally designed as a client-side scripting language, meaning that it ran locally in the browser,
+                    adding dynamic features to the web page that was returned from the server. Ajax allows JavaScript to request resources
+                    from a server on behalf of the client.<br>
+                    <strong>A Brief History of Ajax</strong><br>
+                    <i>Asynchronous</i><br>
+                    When a request for data is sent, the program doesn’t have to stop and wait for the response. It can carry on running,
+                    waiting for an event to fire when a response is received.<br>
+                    <i>JavaScript</i><br>
+                    JavaScript was always considered a 'front-end' language, not used to communicate with the server.<br>
+                    <i>XML</i><br>
+                    <strong>The Fetch API</strong><br>
+                    <strong>Basic Usage</strong><br>
+                    The Fetch API provides a global fetch() method that only has one mandatory argument, which is the URL of the resource
+                    you wish to fetch.<br>
+                    <strong>Response Interface</strong><br>
+                    The Fetch API introduced the Response interface that deals with the object that’s returned when the promise is
+                    fulfilled.Response objects have a number of properties and methods that allow us to process the response effectively.
+                    <strong>Headers Interface</strong><br>
+                    HTTP headers are used to pass on any additional information about a request or response. Typical information contained
+                    in headers includes the file-type of the resource, cookie information, authentication information and when the resource
+                    was last modified.<br>
+                    <strong>Sending Information</strong><br>
+                    We can also use Ajax to send information. This can be a variety of formats, but is usually a JSON string.<br>
+                    <strong>A Living Standard</strong><br>
+                    The Fetch API is, at the time of writing, what is known as a 'living standard', which means that the specification is
+                    being developed 'in the wild'. This means that, despite it being available to use, it’s still subject to change as
+                    developers, browser vendors and end-users provide feedback about how it works. It’s an experimental technology, and new
+                    features might get added, or the syntax and behavior of some properties and methods might change in the future.
+                    
+
+
+
+
+
+
+
+
+
+
+
+
+                </p>
                     <div id="exercises">
                     <h5>Exercises</h5>
-                    <h5>JavaScript 30 : <span><a href="../JavaScript30/Day04/index.html">Day04</a></span></h5>
+                    <h5><span><a href="../week7/ajax.html">Receiving Information</a></span></h5>
+                    <h5><span><a href="../week7/todo.html">Todo API</a></span></h5>
                     <h5>JavaScript 30 : <span><a href="../JavaScript30/Day05/index.html">Day05</a></span></h5>
                     <h5>JavaScript 30 : <span><a href="../JavaScript30/Day06/index.html">Day06</a></span></h5>
                     <h5>JavaScript 30 : <span><a href="../JavaScript30/Day07/index.html">Day07</a></span></h5>
