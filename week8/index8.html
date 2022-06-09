@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almendra:wght@700&family=M+PLUS+Rounded+1c:wght@300&family=Ubuntu:ital,wght@0,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/stylesheet.css">
+    <link rel="stylesheet" href="../week8/week8.css">
+
+
+
+    <title>Portfolio</title>
+
+</head>
+
+
+<body>
+
+    <header>
+        <h1 class="headtitle"> <a href="../index.html">WDD 330 Portfolio</a></h1>
+        <h3>SHION KEATY</h3>
+    </header>
+
+    <main>
+        <h2>Week 07</h2>
+
+        <section>
+        <h4>●Notes●</h4>
+            
+            <h6>HTML5 and CSS3 for the Real world</h6>
+            <h5>CSS3 Transforms and Transitions</h5>
+                    <p>
+                        <strong>Transforms</strong><br>
+                        The CSS3 transform property lets you lets you translate, rotate, scale, and/or skew any element on the page.
+                        We can manipulate an element’s appearance using transform functions. The value of the transform property is one or more
+                        transform functions (separated by spaces) that will be applied in the order they’re provided.<br>
+                        <strong>Translation</strong><br>
+                        Translation functions allow you to move elements left, right, up, or down. These functions are similar to the behavior
+                        of position: relative; when declaring top and left, moving elements up and down or left and right along the x and y
+                        axes.
+                        <section class="ex">
+                            transform: translate(45px, -45px);
+                            -webkit-transform: translate(45px,-45px); /* iOS8, Android 4.4.3, BB10 */
+                            -ms-transform: translate(45px,-45px); /* IE9 only */
+                            transform: translate(45px,-45px);
+                        </section>
+                        <strong>Scaling</strong><br>
+                        The scale(x,y) function scales an element by the defined factors horizontally then vertically. If only one value is
+                        provided, it will be used for both the x and y values, growing or shrinking your element or pseudo-element while
+                        maintaining the original aspect ratio.<br>
+                        <section class="ex">
+                            transform: scale(1.5, 0.25);
+                        </section>
+                        <strong>Rotation</strong><br>
+                        The rotate() function rotates an element around the point of origin by a specified angle value. As with scale, by
+                        default the point of origin is the element’s center. Generally, angles are declared in degrees, with positive degrees
+                        moving clockwise and negative moving counterclockwise.<br>
+                        <section class="ex">
+                            transform: rotate(10deg);
+                        </section>
+                        <strong>Skew</strong><br>
+                        The skew(x,y) function specifies a skew along the x and y axes. As you’d expect, the x specifies the skew on the x axis,
+                        and the y specifies the skew on the y axis. If the second parameter is omitted, the skew will only occur on the x axis:
+                        <section class="ex">
+                            transform: skew(15deg, 4deg);
+                        </section>
+                        <strong>Changing the Origin of the Transform</strong><br>
+                        As we hinted at earlier, you can control the origin from which your transforms are applied. This is done using the
+                        transform-origin property.<br>
+                        <strong>Note: Choose Your Ordering Carefully</strong><br>
+                        <strong>Support for Internet Explorer 8 and Earlier</strong><br>
+                        <strong>Transitions</strong><br>
+                        Transitions allow the values of CSS properties to change over time, essentially providing simple animations.
+                        We can animate any of the transforms we’ve just seen, so that our pages feel more dynamic.
+                        <section class="ex">
+                            Steps to create a simple transition using only CSS:<br>
+                            
+                            1.Declare the original state of the element in the default style declaration.<br>
+                            2.Declare the final state of your transitioned element; for example, a :hover state.<br>
+                            3.Include the transition functions in your default style declaration using the transition properties, including:
+                            transition-property, transition-duration, transition-timing-function, and transition-delay. We’ll look at each of these
+                            and how they work shortly.
+                        </section>
+                        <i>transition-property</i><br>
+                        The transition-property property defines the CSS properties of the element that should be transitioned, with all for all
+                        properties being the default.<br>
+                        <i>The transition-duration Property</i><br>
+                        The transition-duration property sets how long the transition will take: the duration of time it takes to go from the
+                        default state to the transitioned state.
+                        <section class="ex">transition-duration: 0.2s;</section>
+                        <i>The transition-timing-function Property</i><br>
+                        The transition-timing-function lets you control the pace of the transition in even more granular detail. Do you want
+                        your animation to start off slow and become faster, start off fast and end slower, advance at an even keel, or some
+                        other variation?<br>
+                        The most common timing functions include the key terms ease, linear, ease-in, ease-out, or ease-in-out.<br>
+                        ease has a slow start, then it speeds up, and ends slowly.<br>
+                        ease-in-out is similar to ease, but accelerates more sharply at the beginning.<br>
+                        linear creates a transition that animates at a constant speed. <br>
+                        ease-in creates a transition that is slow to start but gains speed, then stops abruptly.<br>
+                        http://cubic-bezier.com/<br>
+                        <section class="ex">transition-timing-function: ease-out;</section>
+                        <strong>Property</strong><br>
+                        Finally, by using the transition-delay property, it’s possible to introduce a delay before the transition begins.
+                        Normally a transition begins immediately, so the default is 0. Include the number of milliseconds (ms) or seconds (s) to
+                        delay the transition.<br>
+                        <section class="ex">
+                            -webkit-transition-delay: 50ms;<br>
+                            transition-delay: 50ms;<br>
+                        </section>
+                        <strong>The transition Shorthand Property</strong><br>
+                        <section class="ex">
+                            .ad-ad2 h1 span {
+                            transition-property: transform;<br>
+                            transition-duration: 0.2s;<br>
+                            transition-timing-function: ease-out;<br>
+                            transition-delay: 50ms;
+                            }<br>
+                            ↓<br>
+                            .ad-ad2 h1 span {
+                            transition: transform 0.2s ease-out 50ms;
+                            }
+                        </section>
+                        <strong>Multiple Transitions</strong><br>
+                        <strong>Animations</strong><br>
+                        Transitions animate elements over time; however, they’re limited in what they can do. You can define starting and ending
+                        states, but there’s no fine-grained control over any intermediate states. CSS animations, unlike transitions, allow you
+                        to control each step of an animation via keyframes.<br>
+                        <strong>Keyframes</strong><br>
+                        To animate an element in CSS, you first create a named animation, then attach it to an element in that element’s
+                        property declaration block. Animations in themselves don’t do anything; in order to animate an element, you’ll need to
+                        associate the animation with that element.<br>
+                        There are two keyterms― from and to ―which evaluate to 0% and 100% respectively. These values specify how far along the
+                        animation each keyframe is located.<br>
+                        <section class="ex">
+                            @keyframes moveRight {<br>
+                            from {<br>
+                            transform: translateX(-50%);<br>
+                            }<br>
+                            to {<br>
+                            transform: translateX(50%);<br>
+                            }<br>
+                            
+                            @keyframes appearDisappear {<br>
+                            0%, 100% {<br>
+                            opacity: 0;<br>
+                            }<br>
+                            20%, 80% {<br>
+                            opacity: 1;<br>
+                            }<br>
+                            }<br>
+                            
+                            @keyframes bgMove {<br>
+                            100% {<br>
+                            background-position: 120% 0;<br>
+                            }<br>
+                            }<br>
+                        </section>
+
+
+
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+
+                </p>
+                    <div id="exercises">
+                    <h5>Exercises</h5>
+                    <h5><span><a href="../week7/ajax.html">Receiving Information</a></span></h5>
+                    <h5><span><a href="../week7/todo.html">Todo API</a></span></h5>
+                    <!--<h5>JavaScript 30 : <span><a href="../JavaScript30/Day05/index.html">Day05</a></span></h5>
+                    <h5>JavaScript 30 : <span><a href="../JavaScript30/Day06/index.html">Day06</a></span></h5>
+                    <h5>JavaScript 30 : <span><a href="../JavaScript30/Day07/index.html">Day07</a></span></h5>-->
+                    
+                    <br>
+
+                    
+
+                    
+                    
+                    </div>
+                
+            </ol>
+
+        <h4>●Questions●</h4>
+            <p>
+            </p>
+
+        </section>
+
+
+    </main>
+    <footer>
+        Shion Keaty | WDD330
+    </footer>
+
+
+    <script src="../week7/week7.js"></script>
+</body>
+
+</html>
