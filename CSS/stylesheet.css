@@ -77,3 +77,6 @@ a:hover {
   width: 70%;
   margin: 0 auto;
 }
+.myCanvas {
+  border: dotted 2px black;
+}

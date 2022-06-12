@@ -9,7 +9,6 @@
         href="https://fonts.googleapis.com/css2?family=Almendra:wght@700&family=M+PLUS+Rounded+1c:wght@300&family=Ubuntu:ital,wght@0,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS/stylesheet.css">
-    <link rel="stylesheet" href="../week8/week8.css">
 
 
 
@@ -32,7 +31,7 @@
         <h4>●Notes●</h4>
             
             <h6>HTML5 and CSS3 for the Real world</h6>
-            <h5>CSS3 Transforms and Transitions</h5>
+            <h5>Ch8 CSS3 Transforms and Transitions</h5>
                     <p>
                         <strong>Transforms</strong><br>
                         The CSS3 transform property lets you lets you translate, rotate, scale, and/or skew any element on the page.
@@ -159,26 +158,97 @@
                             }<br>
                             }<br>
                         </section>
+                </p>
+                <h5>Ch12 Canvas, SVG, and Drag and Drop</h5>
+                <p>
+                    <strong>Canvas</strong><br>
+                    With HTML5’s Canvas API, we can draw anything we can imagine, all through JavaScript. This can improve the performance
+                    of our websites by avoiding the need to download images off the network. With canvas, we can draw shapes and lines, arcs
+                    and text, gradients and patterns. In addition, canvas gives us the power to manipulate pixels in images and even video.<br>
+                    <strong>Creating a canvas Element</strong><br>
+                    <section class="ex">
+                        <canvas id="myCanvas" class="myCanvas" width="200" height="200">
+                            Sorry! Your browser doesn’t support Canvas.
+                        </canvas>
+                    </section>
+                    <strong>Drawing on the Canvas</strong><br>
+                    <strong>Getting the Context</strong><br>
+                    We obtain our drawing context by calling the getContext method and passing it the string "2d", since we’ll be drawing in
+                    two dimensions:<br>
+                    <strong>Filling Our Brush with Color</strong><br>
+                    <strong>Drawing a Rectangle to the Canvas</strong><br>
+                    Once we’ve defined the color of the stroke and the fill, we’re ready to start drawing! Let’s begin by drawing a
+                    rectangle. We can repeat the steps we just took: grabbing the canvas and the context, and setting a fill and stroke
+                    style. But now, we’ll draw a rectangle. We can do this by calling the fillRect and strokeRect methods.<br>
+                    <strong>Variations on fillStyle</strong><br>
+                    Instead of a color as our fillStyle, we could have used a CanvasGradient or a CanvasPattern object. Let’s create a
+                    pattern on the second canvas element (whose ID is demo2) on the <a href="canvas.html">canvas.html</a> page.
 
+                    <script>
+                        var canvas = document.getElementById("myCanvas");
+                        var context = canvas.getContext("2d");
+                        context.strokeStyle = "red";
+                        context.fillStyle = "rgba(0, 0, 255, 0.5)";
+                        context.fillRect(10, 10, 100, 100);
+                        context.strokeRect(10, 10, 100, 100);
+                    </script>
 
-
-
-
-
-
-
-
-
+                    <strong>Drawing Other Shapes by Creating Paths</strong><br>
+                    We’re not limited to drawing rectangles—we can draw any shape we can imagine! Unlike rectangles and squares, however,
+                    there’s no built-in method for drawing circles or other shapes.<br>
+                    Paths create a blueprint for your lines, arcs, and shapes, but paths are invisible until you give them a stroke! When we
+                    drew rectangles, we first set the strokeStyle and then called fillRect. With more complex shapes, we need to take three
+                    steps: layout the path, stroke the path, and fill the path.<br>
+                    <strong>Saving Canvas Drawings</strong><br>
+                    If we create an image programmatically using the Canvas API, but decide we’d like to have a local copy of our drawing,
+                    we can use the API’s toDataURL method to save our drawing. toDataURL creates a URL with the image in it, (either a png
+                    or jpg, whichever is specified). You can then right-click the image at this URL, and save it as a PNG or JPEG.<br>
+                    <section class="ex">
+                        <h2>Demo 5: Saving canvas drawings</h2>
+                        <canvas width="200" height="200" id="demo5" class="myCanvas">
+                            Sorry! Your browser doesn't support Canvas.
+                        </canvas>
                         
+                        <button name="saveButton" id="saveButton">Save Drawing</button>
+                    </section>
+                    <script>
+                        var canvas = document.getElementById("demo5");
+                            var context = canvas.getContext("2d");
+                            context.strokeStyle = "red";
+                            context.fillStyle = "rgba(0, 0, 255, 0.5)";
+                            context.fillRect(10, 10, 100, 100);
+                            context.strokeRect(10, 10, 100, 100);
+                        function saveDrawing() {
+                                var canvas5 = document.getElementById("demo5");
+                                window.open(canvas5.toDataURL("image/png"));
+                            }
+                            var button = document.getElementById("saveButton");
+                                button.addEventListener("click", saveDrawing, false);
+                    </script>
+                    <strong>SVG</strong><br>
+                    First, a quick refresher: SVG stands for Scalable Vector Graphics, a specific file format that allows you to describe
+                    vector graphics using XML. A major selling point of vector graphics in general is that, unlike bitmap images (such as
+                    GIF, JPEG, PNG, and TIFF), vector images preserve their quality even as you blow them up or shrink them down.<br>
+                    <strong>Drawing in SVG</strong><br>
+                    Drawing a circle in SVG is arguably easier than drawing a circle with canvas. Here’s how we do it:
+                    <section class="ex">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 100">
+                            <circle cx="50" cy="50" r="25" fill="red" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 300 150">
+                            <desc>Drawing a rectangle</desc>
+                            <rect x="10" y="10" width="100" height="100" fill="blue" stroke="red" stroke-width="3" />
+                        </svg>
+                    </section>
+                    <strong>Drag and Drop</strong><br>
+                    We’ve spent quite a bit of time this chapter focusing on drawing with code. Let’s shift gears a little now and look at
+                    an API we can use to add some fun user interaction to our website, the Drag and Drop API. This API allows us to specify
+                    that certain elements are draggable, and then specify what should happen when these draggable elements are dragged over
+                    or dropped onto other elements on the page.<br>
+                    There are two major kinds of functionality you can implement with Drag and Drop: dragging files from your computer into
+                    a web page—in combination with the File API—or dragging elements into other elements on the same page. In this chapter,
+                    we’ll focus on the latter.<br>
 
-
-
-
-
-
-
-
-                        
 
 
 
@@ -190,12 +260,10 @@
                 </p>
                     <div id="exercises">
                     <h5>Exercises</h5>
-                    <h5><span><a href="../week7/ajax.html">Receiving Information</a></span></h5>
-                    <h5><span><a href="../week7/todo.html">Todo API</a></span></h5>
-                    <!--<h5>JavaScript 30 : <span><a href="../JavaScript30/Day05/index.html">Day05</a></span></h5>
-                    <h5>JavaScript 30 : <span><a href="../JavaScript30/Day06/index.html">Day06</a></span></h5>
-                    <h5>JavaScript 30 : <span><a href="../JavaScript30/Day07/index.html">Day07</a></span></h5>-->
-                    
+                    <h5>JavaScript 30 : <span><a href="../JavaScript30/Day08/index.html">Day05</a></span></h5>
+                    <h5>JavaScript 30 : <span><a href="../JavaScript30/Day09/index.html">Day06</a></span></h5>
+                    <!--<h5>JavaScript 30 : <span><a href="../JavaScript30/Day07/index.html">Day07</a></span></h5>-->
+                    <h5><span><a href="../Team activity/week 08/ta_week8-1.html">Team Activity Week8</a></span></h5>
                     <br>
 
                     
