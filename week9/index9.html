@@ -29,6 +29,146 @@
 
         <section>
         <h4>●Notes●</h4>
+                <p>
+                    <h5>Ch 9:The Window Object </h5>
+                    <strong>The Browser Object Model</strong><br>
+                    <strong>Going Global</strong><br>
+                    Global variables are actual properties of a global object. In a browser environment, the global object is the window
+                    object.<br>
+                    <strong>Dialogs</strong><br>
+                    <strong>Browser Information</strong><br>
+                    <strong>Location, Location, Location</strong><br>
+                    The window.location property is an object that contains information about the URL of the current page. It contains a
+                    number of properties that provide information about different fragments of the URL.
+                     <section class="ex">
+                        window.location.href
+                        << "https://www.sitepoint.com/premium/books/javascript-novice-to-ninja"
+                        window.location.protocol 
+                        << "https:"
+                        window.location.host
+                        << "www.sitepoint.com"
+                        window.location.hostname
+                        << "www.sitepoint.com"
+                        window.location.pathname
+                        << "/premium/books/javascript-novice-to-ninja"
+                        window.location.origin
+                        << "https://www.sitepoint.com"
+                    </section>
+                    The window.location object also has the following methods:<br>
+                    ・The reload() method can be used to force a reload of the current page. If it’s given a parameter of true, it will force
+                    the browser to reload the page from the server, instead of using a cached page.<br>
+                    ・The assign() method can be used to load another resource from a URL provided as a parameter, for example:<br>
+                    <section class="ex">
+                        window.location.assign('https://www.sitepoint.com/')
+                    </section>
+                    ・The replace() method is almost the same as the assign() method, except the current page will not be stored in the
+                    session history, so the user will be unable to navigate back to it using the back button.<br>
+                    ・The toString() method returns a string containing the whole URL:<br>
+                    <strong>The Browser History</strong><br>
+                    The window.history property can be used to access information about any previously visited pages in the current browser
+                    session.<br>
+                    <strong>Controlling Windows</strong><br>
+                    <strong>Screen Information</strong><br>
+                    The window.screen object contains information about the screen the browser is displayed on. You can find out the height
+                    and width of the screen in pixels using the height and width properties respectively:
+                    <section class="ex">
+                    window.screen.height
+                    << 1024 
+                    window.screen.width 
+                    << 1280
+                    </section>
+                    <strong>The Document Object</strong><br>
+                    <i>document.write()</i><br>
+                    The write() method simply writes a string of text to the page. If a page has already loaded, it will completely replace
+                    the current document:
+                    <section class="ex">document.write('<h1>Hello, world!</h1>');</section>
+                    <strong>Timing Functions</strong><br>
+                    <i>setTimeout()</i><br>
+                    The window object provides some useful methods for scheduling the execution of a function, and for repeatedly executing
+                    functions at regular intervals.
+                    
+                    The window.setTimeout() method accepts a callback to a function as its first parameter and a number of milliseconds as
+                    its second parameter.
+                    <strong>Animation</strong><br>
+                    <span><a href="../week9/animation/index.html">Animation</a></span>
+
+                    <h5>Ch 14:HTML5 APIs </h5>
+                    HTML5 is the latest version of the Hypertext Markup Language used to create web pages. The latest iteration is HTML 5.1,
+                    which finally became a W3C recommendation in November 2016.<br>
+                    <strong>HTML5 APIs</strong><br>
+                    The HTML5 specification contains a number of APIs that help to gain access to hardware, such as cameras, batteries,
+                    geolocation, and the graphics card. Hardware evolves quickly, and APIs are frequently introduced to give developers
+                    access, and control new features that appear in the latest devices.<br>
+                    <strong>HTML5 Web Storage</strong><br>
+                    <strong>Geolocation</strong><br>
+                    The Geolocation API is used to obtain the geographical position of the device. This means it can be used to find the
+                    user’s exact location, then link to nearby places or measure the speed at which the user is moving. This information can
+                    then be used to filter data based on the user's location or speed and direction of travel.<br>
+                    <strong>Web Workers</strong><br>
+                    We saw in earlier chapters that JavaScript is a single-threaded language, meaning that only one process can run at one
+                    time. Web workers allow processes to be run in the background, adding support for concurrency in JavaScript. The idea is
+                    that any processes that could take a long time are carried out in the background, so a website will continue to function
+                    without fear of the dreaded 'script has become unresponsive' message that occurs when a script runs for too long, shown
+                    below.<br>
+                    <strong>A Factorizing Example</strong><br>
+                    <strong>Websockets</strong><br>
+                    Websocket is a new protocol that allows two-way communication with a server – also known as push messaging. This means
+                    that a connection is kept open and responses are ‘pushed’ to the client as soon as they are received.
+                    
+                    To see this in action, we’ll create a mini-messaging application that uses the websocket protocol to communicate with an
+                    Echo server. This sends a response that is exactly the same as the message it receives.<br>
+                    <a href="websockets/websocket.html">Websockets message app</a>
+                    <strong>Notifications</strong><br>
+                    The Notification API allows you to show messages using the system's notifications. This is usually a popup in the corner
+                    of the screen, but it changes depending on the operating system. An advantage of using the system notification is that
+                    they will still be displayed even if the web page that calls them isn't the current tab.<br>
+                    <strong>Multimedia</strong><br>
+                    <strong>Other APIs</strong><br>
+                    The list of APIs is constantly growing, and includes APIs for accessing a device’s camera, uploading files, accessing
+                    the battery status, handling push notifications, building drag-and-drop functionality, creating 3D effects with WebGL,
+                    and many more! A comprehensive list of HTML5 APIs can be found at the Mozilla Developer Network.<br>
+                    <strong>Drawing with Canvas</strong><br>
+                    The canvas element was introduced to allow graphics to be drawn onto a web page in real time using JavaScript. A canvas
+                    element is a rectangular element on the web page. It has a coordinate system that starts at (0,0) in the top-left
+                    corner. To add a canvas element to a page, the canvas tag is used specifying a height and width. Anything placed
+                    inside the tag will only display if the canvas element is unsupported:<br>
+                    <section class="ex">
+                        <canvas id='canvas' width='400' height='400'>Sorry, but your browser does not support the canvas element</canvas>
+                        <script>
+                            const canvasElement = document.getElementById('canvas');
+                            const context = canvasElement.getContext('2d');
+                            context.fillStyle = "#0000cc"; // a blue fill color 
+                            context.strokeStyle = "#ccc"; // a gray stroke color
+                            context.lineWidth = 4;
+                            context.fillRect(10, 10, 100, 50);
+                            context.strokeRect(10, 100, 100, 50);
+
+                            context.beginPath();
+                                context.moveTo(130, 50);
+                                context.lineTo(180, 50);
+                                context.moveTo(155, 50);
+                                context.lineTo(155, 90);
+                                context.strokeStyle = '#c00';
+                                context.lineWidth = 15;
+                                context.stroke();
+
+                            context.beginPath();
+                                context.arc(200, 200, 30, 0, Math.PI * 2, false);
+                                context.strokeStyle = '#ff0';
+                                context.lineWidth = 4;
+                                context.stroke();
+
+                            context.fillStyle = '#0c0'; // a blue fill color
+                                context.font = 'bold 26px sans-serif';
+                                context.fillText('Hello', 20, 200);
+                        </script>
+
+                    </section>
+                    <strong>Shims and Polyfills</strong><br>
+
+
+
+
           
                 </p>
                     <div id="exercises">
@@ -60,7 +200,7 @@
     </footer>
 
 
-    <script src="../week7/week7.js"></script>
+    <script></script>
 </body>
 
 </html>
