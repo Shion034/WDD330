@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Almendra:wght@700&family=M+PLUS+Rounded+1c:wght@300&family=Ubuntu:ital,wght@0,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/stylesheet.css">
+
+
+
+    <title>Portfolio</title>
+
+</head>
+
+
+<body>
+
+    <header>
+        <h1 class="headtitle"> <a href="../index.html">WDD 330 Portfolio</a></h1>
+        <h3>SHION KEATY</h3>
+    </header>
+
+    <main>
+        <h2>Week 10</h2>
+
+        <section>
+        <h4>●Notes●</h4>
+            
+            <h6>MDN:Validating forms</h6>
+            <h5>クライアント側のフォームデータ検証</h5>
+                <p>
+                    <strong>フォーム検証とは何か</strong>
+                    有名なサイトの登録フォームに行き、データを求められている書式で入力しないと、フィードバックがあることに気づくでしょう。
+                    これはフォーム検証と呼ばれます。データを入力したとき、ブラウザー、またはウェブアプリケーションは、そのデータが正しい書式であり、アプリケーションに設定された制約に合っているかをチェックします。ブラウザーで行われる検証はクライアント側検証と、サーバー側で行われるものはサーバー側検証と呼ばれます。この章では、クライアント側検証に集中します。<br>
+                    <strong>内蔵フォーム検証の利用</strong>
+                     HTML5 のフォーム制御の機能の一つに JavaScript に頼らない多くのユーザーデータの検証があります。これはフォーム要素の検証の属性を使って行います。
+                     <section class="ex">
+                        <ul>
+                            <li>required: 属性は値が入力されているべきかどうかを指定します</li>
+                            <li>minlength 属性と maxlength属性: データ長の最小値と最大値を指定します。</li>
+                            <li>min 属性と max属性: 値の最小値と最大値を指定します。</li>
+                            <li>type 属性: その入力データが数値や、E メールアドレスや、特定の指定型かを指定します。</li>
+                            <li>pattern 属性: データが指定された正規表現にマッチするかどうかを指定します。</li>
+                        </ul>
+                     </section>
+                    <strong>入力要素の制約の検証</strong>
+                    <section class="ex">
+                        Example code<a href="fruit-start.html">簡単な最初のファイル</a>
+                    </section>
+                    <strong>正規表現での検証</strong>
+                    もう一つとてもよく使われる機能は pattern 属性で、値として正規表現を取ります。正規表現 (regex) はテキスト文字列の中の文字の組み合わせに一致させるために使うことができ、フォームの検証には理想的です (JavaScript
+                    と同様に様々な利用ができます) 。<br>
+                    <strong>入力欄の長さの制約</strong>
+                    あなたが、input または textarea によって作成してすべてのテキストフィールドで文字数を制限したいときには minlength 属性と maxlength 属性が使用できます。フィールドが値をもっており、その文字数が minlength の値より少ないか、文字数が maxlength の値より大きい場合は、フィールドは不正です。<br>
+                    
+                    <strong>JavaScript を使用したフォーム検証</strong>
+                    内蔵のエラーメッセージの見かけを制御したい場合や、HTML5 のフォーム検証に対応していないブラウザーに対処したい場合は、JavaScript を使用する必要があります。<br>
+                    <i>HTML5 の制約検証 API</i>
+                    多くのブラウザーが 制約検証API に対応しています。この API は各フォーム要素で使用できる一連のメソッドやプロパティで構成されています。
+                    <section class="ex">
+                        <ul>
+                            <li>HTMLButtonElement (<button> 要素を表現)</li>
+                            <li>HTMLFieldSetElement (<fieldset> 要素を表現)</li>
+                            <li>HTMLInputElement ( <input> 要素を表現)</li>
+                            <li>HTMLSelectElement (<select> 要素を表現)</li>
+                            <li>HTMLTextAreaElement (<textarea> 要素を表現)</li>
+                        </ul>
+                    </section>
+                    
+
+
+
+                </p>
+                    <div id="exercises">
+                    <h5>Exercises</h5>
+                    <h5>JavaScript 30 : <span><a href="#">Day</a></span></h5>
+                    <h5>JavaScript 30 : <span><a href="#">Day</a></span></h5>
+                    <!--<h5>JavaScript 30 : <span><a href="../JavaScript30/Day07/index.html">Day07</a></span></h5>-->
+                    <h5><span><a href="#">Team Activity Week10</a></span></h5>
+                    <br>
+
+                    
+
+                    
+                    
+                    </div>
+                
+            </ol>
+
+        <h4>●Questions●</h4>
+            <p>
+            </p>
+
+        </section>
+
+
+    </main>
+    <footer>
+        Shion Keaty | WDD330
+    </footer>
+
+
+    <script src="../week7/week7.js"></script>
+</body>
+
+</html>

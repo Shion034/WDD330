@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+input:invalid {
+  border: 2px dashed red;
+}
+
+input:invalid:required {
+  background-image: linear-gradient(to right, pink, lightgreen);
+}
+
+input:valid {
+  border: 2px solid black;
+}
+
+div {
+  margin-bottom: 10px;
+}
+
+form {
+  font: 1em sans-serif;
+  max-width: 320px;
+}
+
+p > label {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+fieldset {
+  width : 100%;
+  border: 1px solid #333;
+  box-sizing: border-box;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h3>簡単な検証</h3>
+    <form>
+        <label for="choose">banana と cherry のどちらが好き? (要入力)</label>
+        <input id="choose" name="i_like" required>
+        <button>Submit</button>
+    </form>
+    <h3>正規検証</h3>
+    <form>
+        <label for="choose">banana と cherry のどちらが好き?</label>
+        <input id="choose" name="i_like" required pattern="[Bb]anana|[Cc]herry">
+        <button>Submit</button>
+    </form>
+    <h3>入力欄の値の制限</h3>
+    <form>
+        <div>
+            <label for="choose">banana と cherry のどちらが好き?</label>
+            <input type="text" id="choose" name="i_like" required minlength="6" maxlength="6">
+        </div>
+        <div>
+            <label for="number">どのくらい要ります?</label>
+            <input type="number" id="number" name="amount" value="1" min="1" max="10">
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+        <h3>Formサンプル</h3>
+        <form>
+            <p>
+            <fieldset>
+                <legend>Do you have a driver's license?<abbr title="This field is mandatory" aria-label="required">*</abbr>
+                </legend>
+                <!-- While only one radio button in a same-named group can be selected at a time,
+                   and therefore only one radio button in a same-named group having the "required"
+                   attribute suffices in making a selection a requirement -->
+                <input type="radio" required name="driver" id="r1" value="yes"><label for="r1">Yes</label>
+                <input type="radio" required name="driver" id="r2" value="no"><label for="r2">No</label>
+            </fieldset>
+            </p>
+            <p>
+                <label for="n1">How old are you?</label>
+                <!-- pattern 属性は number 型の入力欄を実装していないものの、pattern
+                 属性には対応しているブラウザー向けの代替策として動作できます。
+                 なお、pattern 属性に対応しているブラウザーでは、number 型の入力欄
+                 で使用すると暗黙に失敗します。
+                 ここでは代替策としての使い方のみです。-->
+                <input type="number" min="12" max="120" step="1" id="n1" name="age" pattern="\d+">
+            </p>
+            <p>
+                <label for="t1">What's your favorite fruit?<abbr title="This field is mandatory"
+                        aria-label="required">*</abbr></label>
+                <input type="text" id="t1" name="fruit" list="l1" required
+                    pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range">
+                <datalist id="l1">
+                    <option>Banana</option>
+                    <option>Cherry</option>
+                    <option>Apple</option>
+                    <option>Strawberry</option>
+                    <option>Lemon</option>
+                    <option>Orange</option>
+                </datalist>
+            </p>
+            <p>
+                <label for="t2">What's your e-mail address?</label>
+                <input type="email" id="t2" name="email">
+            </p>
+            <p>
+                <label for="t3">Leave a short message</label>
+                <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+            </p>
+            <p>
+                <button>Submit</button>
+            </p>
+        </form>
+
+        <h3>JavaScriptを使用しての検証</h3>
+        <form>
+            <label for="mail">私にメールアドレスを教えてください:</label>
+            <input type="email" id="mail" name="mail">
+            <button>Submit</button>
+        </form>
+        <script>
+            const email = document.getElementById("mail");
+
+                email.addEventListener("input", function (event) {
+                    if (email.validity.typeMismatch) {
+                        email.setCustomValidity("I am expecting an e-mail address!");
+                    } else {
+                        email.setCustomValidity("");
+                    }
+                });
+        </script>
+</body>
+</html>
