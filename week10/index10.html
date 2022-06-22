@@ -63,19 +63,70 @@
                     多くのブラウザーが 制約検証API に対応しています。この API は各フォーム要素で使用できる一連のメソッドやプロパティで構成されています。
                     <section class="ex">
                         <ul>
-                            <li>HTMLButtonElement (<button> 要素を表現)</li>
-                            <li>HTMLFieldSetElement (<fieldset> 要素を表現)</li>
-                            <li>HTMLInputElement ( <input> 要素を表現)</li>
-                            <li>HTMLSelectElement (<select> 要素を表現)</li>
-                            <li>HTMLTextAreaElement (<textarea> 要素を表現)</li>
+                            <li>HTMLButtonElement (button 要素を表現)</li>
+                            <li>HTMLFieldSetElement (fieldset 要素を表現)</li>
+                            <li>HTMLInputElement ( input 要素を表現)</li>
+                            <li>HTMLSelectElement (select 要素を表現)</li>
+                            <li>HTMLTextAreaElement (textarea 要素を表現)</li>
                         </ul>
                     </section>
-                    
-
-
-
+                  
                 </p>
-                    <div id="exercises">
+                <h5>Fetch の使用</h5>
+                <p>
+                <section class="ex">
+                    fetch('http://example.com/movies.json')
+                    .then(response => response.json())
+                    .then(data => console.log(data));
+                </section>
+                    これはネットワーク越しに JSON ファイルを取得してコンソールに出力するスクリプトです。 fetch() の最も簡単な使い方は 1 つの引数 — fetch で取得したいリソースへのパス — のみをとり、 Response
+                    オブジェクトで解決するプロミスを返します。
+                    <strong>リクエストオプションの適用</strong>
+                    fetch() メソッドには 2 つ目の引数を適用することができ、 init オブジェクトで様々な種類の設定を制御することができます。<br>
+                    <strong>認証情報つきのリクエストの送信</strong><br>
+                    <strong>JSON データのアップロード</strong><br>
+                    fetch() を使って JSON エンコードしたデータを POST します。<br>
+                    <strong>ファイルのアップロード</strong><br>
+                    ファイルは HTML の <input type="file" /> input 要素と、FormData() と fetch() を使ってアップロードできます。<br>
+                    <section class="ex">
+                        const formData = new FormData();
+                        const fileField = document.querySelector('input[type="file"]');
+                        
+                        formData.append('username', 'abc123');
+                        formData.append('avatar', fileField.files[0]);
+                        
+                        fetch('https://example.com/profile/avatar', {
+                        method: 'PUT',
+                        body: formData
+                        })
+                        .then(response => response.json())
+                        .then(result => {
+                        console.log('Success:', result);
+                        })
+                        .catch(error => {
+                        console.error('Error:', error);
+                        });
+                    </section>
+                    <strong>複数のファイルのアップロード</strong><br>
+                    ファイルのアップロードは、 HTML の <input type="file" multiple /> 入力要素と FormData() と fetch() を使用して行うことができます。
+                    <section class="ex">
+                        const formData = new FormData();
+                        const photos = document.querySelector('input[type="file"][multiple]');
+                        
+                        formData.append('title', 'My Vegas Vacation');
+                        for (let i = 0; i < photos.files.length; i++) { formData.append(`photos_${i}`, photos.files[i]); }
+                            fetch('https://example.com/posts', { method: 'POST' , body: formData, }) .then(response=> response.json())
+                            .then(result => {
+                            console.log('Success:', result);
+                            })
+                            .catch(error => {
+                            console.error('Error:', error);
+                            });
+                    </section>
+
+                    なるほど。わからん<a href="https://developer.mozilla.org/ja/docs/Web/API/Fetch_API/Using_Fetch">Fetch()</a>
+                </p>
+                <div id="exercises">
                     <h5>Exercises</h5>
                     <h5>JavaScript 30 : <span><a href="#">Day</a></span></h5>
                     <h5>JavaScript 30 : <span><a href="#">Day</a></span></h5>
@@ -87,9 +138,8 @@
 
                     
                     
-                    </div>
+                </div>
                 
-            </ol>
 
         <h4>●Questions●</h4>
             <p>
