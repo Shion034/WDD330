@@ -22,4 +22,11 @@ body main h2 {
   color: #21C4D3;
   border-bottom: solid 5px #21C4D3;
 }
+
+body main footer {
+  background-color: #189AA7;
+  text-align: center;
+  padding: 0.7rem;
+  margin-top: 0.5rem;
+}
 /*# sourceMappingURL=style.css.map */
