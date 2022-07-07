@@ -21,7 +21,16 @@ main{
         color: $strongcolor;
         border-bottom: solid 5px $strongcolor;
     }
+    .area1{
+        text-align: center;
 
+    }
+    .out-area{
+        display: flex
+    }
+    .numinput1,.output{
+            width: 80% ;
+        }
     footer{
         background-color: $maincolor;
         text-align: center;
