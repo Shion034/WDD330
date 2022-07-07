@@ -1,0 +1,25 @@
+body {
+  background-color: #F9ECE4;
+  margin: 0 auto;
+}
+
+body header {
+  width: 100%;
+  text-align: center;
+  background-color: #189AA7;
+}
+
+body header h1 {
+  margin: 0;
+}
+
+body main {
+  width: 80%;
+  margin: 0 auto;
+}
+
+body main h2 {
+  color: #21C4D3;
+  border-bottom: solid 5px #21C4D3;
+}
+/*# sourceMappingURL=style.css.map */

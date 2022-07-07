@@ -1,0 +1,28 @@
+$backcolor : #F9ECE4;
+$maincolor : #189AA7;
+$strongcolor: #21C4D3;
+
+body{
+    background-color: $backcolor;
+    margin: 0 auto;
+header {
+    width: 100%;
+    text-align: center;
+    background-color: $maincolor;
+    h1{
+        margin: 0;
+    }
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+
+    h2{
+        color: $strongcolor;
+        border-bottom: solid 5px $strongcolor;
+    }
+}
+
+
+
+}
