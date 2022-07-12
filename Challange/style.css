@@ -25,6 +25,17 @@ body main h2 {
 
 body main .area1 {
   text-align: center;
+  width: 80%;
+}
+
+body main .area1 .outputTF {
+  display: inherit;
+  background-color: white;
+  width: 80%;
+  height: 41%;
+  border: solid gray 1px;
+  border-radius: 2px;
+  margin: auto;
 }
 
 body main .out-area {
@@ -33,7 +44,7 @@ body main .out-area {
   display: flex;
 }
 
-body main .numinput1, body main .output {
+body main .numinput, body main .output {
   width: 80%;
 }
 

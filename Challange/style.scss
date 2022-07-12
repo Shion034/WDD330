@@ -23,12 +23,22 @@ main{
     }
     .area1{
         text-align: center;
+        width: 80%;
 
+        .outputTF{
+            display: inherit;
+            background-color: white;
+            width: 80%;
+            height: 41%;
+            border: solid gray 1px;
+            border-radius: 2px;
+            margin: auto;
+        }
     }
     .out-area{
         display: flex
     }
-    .numinput1,.output{
+    .numinput ,.output{
             width: 80% ;
         }
     footer{
