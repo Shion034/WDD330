@@ -9,15 +9,13 @@ function ConvertCF(){
     const sele = document.querySelector('.sele1').value;
 
     if (~sele.indexOf('Celsius')){
-    /*TempretureA = Math.round((celNum*9/5)+32);
+    TempretureA = Math.round((celNum*9/5)+32);
     console.log(celNum);
     console.log(TempretureA);
-    OutputAreaT.innerHTML = TempretureA;*/
-        console.log('hello1');
+    OutputAreaT.innerHTML = TempretureA;
     } else if (~sele.indexOf('Fahrenheit')){
-       /* TempretureA = Math.round((celNum-32)*5/9);
-        OutputAreaT.innerHTML = TempretureA;*/
-        console.log('hi1');
+       TempretureA = Math.round((celNum-32)*5/9);
+        OutputAreaT.innerHTML = TempretureA;
     }}
 convert1.addEventListener('click', ConvertCF);
 
