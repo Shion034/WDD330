@@ -11,6 +11,22 @@ body header {
 
 body header h1 {
   margin: 0;
+  padding: 1.5%;
+}
+
+body header ul {
+  background-color: whitesmoke;
+  width: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  margin: 0;
+  list-style: none;
+}
+
+body header ul li {
+  text-align: center;
 }
 
 body main {

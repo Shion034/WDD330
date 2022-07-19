@@ -11,11 +11,26 @@ header {
     background-color: $maincolor;
     h1{
         margin: 0;
+        padding: 1.5%;
+    }
+    ul{ 
+        background-color: whitesmoke;
+        width: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0;
+        
+        list-style: none;
+        li{
+            text-align: center;
+        }
     }
 }
 main{
     width: 80%;
     margin: 0 auto;
+
+    
 
     h2{
         color: $strongcolor;
