@@ -11,7 +11,6 @@ const links = [
     { label: "Week8 notes", url: "week8/index8.html" },
     { label: "Week9 notes", url: "week9/index9.html" },
     { label: "Week10 notes", url: "week10/index10.html" },
-    { label: "Week11 notes", url: "week11/index11.html" },
 ];
 //querySelectorを使ってHTML内の要素を自由に選択・取得することができる。
 const getOl = document.querySelector("ol");

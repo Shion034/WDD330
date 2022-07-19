@@ -1,7 +1,6 @@
-import Hikes from './hikes.js';
-const hikes = new Hikes();
-const myHike = new Hikes('hikeListId');
+import Hikes from "./hikes.js";
 
-myHike.showHikeList()
+const hikes = new Hikes('hikeListId');
 
-hikes.showHikeList(hikes.parentElement, hikes.getHikeList)
+
+hikes.showHikeList()
