@@ -9,13 +9,13 @@ function ConvertCF(){
     const sele = document.querySelector('.sele1').value;
 
     if (~sele.indexOf('Celsius')){
-    TempretureA = Math.round((celNum*9/5)+32);
+    TempretureA = (celNum*9/5)+32;
     console.log(celNum);
     console.log(TempretureA);
     OutputAreaT.innerHTML = TempretureA;
     console.log("Now you selected Celsius");
     } else if (~sele.indexOf('Fahrenheit')){
-        TempretureA = Math.round((celNum-32)*5/9);
+        TempretureA = (celNum-32)*5/9;
         OutputAreaT.innerHTML = TempretureA;
         console.log("Now you selected Fahrenheit");
     }}
@@ -108,11 +108,11 @@ const outPutsele3 = document.querySelector('.outputsele3').value;
         outputW.innerHTML = weightGtop;
         console.log("Now you selected Gram and Pound");
     } else if (~sele3.indexOf('Kilogram') && ~outPutsele3.indexOf('Ounce')) {
-        weightKtoO = Math.round(celNum3 * 35.274);
+        weightKtoO = celNum3 * 35.274;
         outputW.innerHTML = weightKtoO;
         console.log("Now you selected Kilogram and Ounce");
     } else if (~sele3.indexOf('Kilogram') && ~outPutsele3.indexOf('Pound')) {
-        weightKtoO = Math.round(celNum3 * 2.205);
+        weightKtoO = celNum3 * 2.205;
         outputW.innerHTML = weightKtoO;
         console.log("Now you selected Kilogram and Pound");
     }
@@ -120,18 +120,42 @@ const outPutsele3 = document.querySelector('.outputsele3').value;
 
 convert3.addEventListener('click',convertW);
 
-/*
-const option1 = document.selection1;
-const cOrF = option1.selectedIndex;
-const str = document.selection1.options[cOrF].value;
-console.log(str);
+/*------------------------------Area------------------------------*/ 
+const convert5 = document.querySelector('.Convert5');
 
-const sele = document.querySelector('.sele1').value;
-const chosen = document.querySelector('.sele1');
-function hahaha(){
-    if (~sele.indexOf('Fahrenheit')) {
-    console.log(sele);}
-    else{
-    console.log('HI');
-    }}
-chosen.addEventListener('change',hahaha);*/
+function convertA() {
+    const celNum5 = document.querySelector('.numinput5').value;
+    const outputA = document.querySelector('.output5');
+    const sele5 = document.querySelector('.sele5').value;
+    const outPutsele5 = document.querySelector('.outputsele5').value;
+
+    if (~sele5.indexOf('Skilometer') && ~outPutsele5.indexOf('Smile')) {
+        areaKtoM= celNum5 / 2.59;
+        outputA.innerHTML = areaKtoM;
+    }  else if (~sele5.indexOf('Skilometer') && ~outPutsele5.indexOf('Hectar')) {
+        areaKtoH = celNum5 *100;
+        outputA.innerHTML = areaKtoH;
+    } else if (~sele5.indexOf('Skilometer') && ~outPutsele5.indexOf('Acre')) {
+        areaKtoA = celNum5 * 247.1;
+        outputA.innerHTML = areaKtoA;
+    } 
+
+    else if (~sele5.indexOf('Smeter') && ~outPutsele5.indexOf('Syard')) {
+        weightMtoY = celNum5 *1.196;
+        outputA.innerHTML = weightMtoY;
+    } else if (~sele5.indexOf('Smeter') && ~outPutsele5.indexOf('Sfoot')) {
+        weightMtoF = celNum5 * 10.764;
+        outputA.innerHTML = weightMtoF;
+    } else if (~sele5.indexOf('Smeter') && ~outPutsele5.indexOf('Sinch')) {
+        weightMtoI = celNum5 * 1550;
+        outputA.innerHTML = weightMtoI;
+    } else if (~sele5.indexOf('Smeter') && ~outPutsele5.indexOf('Acre')) {
+        weightMtoA = celNum5 /4047;
+        outputA.innerHTML = weightMtoA;
+    } else {
+        outputA.innerHTML = ('‼');
+    }
+
+}
+
+convert5.addEventListener('click', convertA);

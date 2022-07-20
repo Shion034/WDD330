@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #F9ECE4;
   margin: 0 auto;
@@ -19,8 +20,8 @@ body header ul {
   width: 0 auto;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   margin: 0;
   list-style: none;
 }
@@ -52,6 +53,14 @@ body main .area1 .output {
   border: solid gray 1px;
   border-radius: 2px;
   margin: auto;
+}
+
+body main .area1 .ellipsis {
+  width: 80%;
+  /* 省略せずに表示するサイズを指定 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 body main .out-area {

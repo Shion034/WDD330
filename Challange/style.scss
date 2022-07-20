@@ -17,7 +17,7 @@ header {
         background-color: whitesmoke;
         width: 0 auto;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         margin: 0;
         
         list-style: none;
@@ -49,6 +49,13 @@ main{
             border-radius: 2px;
             margin: auto;
         }
+                .ellipsis {
+                    width: 80%;
+                    /* 省略せずに表示するサイズを指定 */
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
     }
     .out-area{
         display: flex
